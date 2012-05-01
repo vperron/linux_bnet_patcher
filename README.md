@@ -10,6 +10,7 @@ Run Diablo 3 with wine, use
 to retrieve its processID, and then 
 
 > make linux_bnet_patcher
+
 > sudo ./linux_bnet_patcher <PID>
 
 That's it.
