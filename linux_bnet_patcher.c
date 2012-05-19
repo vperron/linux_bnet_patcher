@@ -35,6 +35,8 @@ int main(int argc, char** argv) {
 	val = ptrace(PTRACE_ATTACH, pid, 0, 0);
 	if (val != -1) {
 		printf("Successfully attached to process: %d\n",pid);
+		//need to wait a bit, to be sure the process is stopped
+        	wait(2);
 		val = ptrace(PTRACE_PEEKDATA, pid, ADDR, 0);
 		if (val != -1) {
 			// The read byte should be 0x75 (JNZ / JumpNotZero)
